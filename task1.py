@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import csv
 
 def name_and_price():
     products = []
@@ -39,14 +40,16 @@ def name_and_price():
     except IndexError:
         print('No more products')
     
+
+    # csv logic, where every product is linked to their price
+    # with open('wilkson.csv', 'w', newline='') as main_file:
+    #     csv_writer = csv.writer(main_file)
+    #     csv_writer.writerow(('Product', 'Price'))
+    #     rcount = 0
+    #     for i in products:
+    #         csv_writer.writerow((products[rcount], price_list[rcount]))
+    #         rcount += 1
     
-    # if __name__ == '__main__':
-    #     name_and_price()
-
-    arr = {}
-    for i in products:
-        for j in price_list:
-            arr[i] = j
-    print(arr)
-
-name_and_price()
+    
+if __name__ == '__main__':
+    name_and_price()
